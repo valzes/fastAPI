@@ -1,10 +1,10 @@
-from util import fast_api_enc_util
+from app.util import fast_api_enc_util
 from fastapi import HTTPException, Depends, APIRouter
 from starlette.status import HTTP_201_CREATED, HTTP_404_NOT_FOUND
-from models.schemas import UserCreate, ResponseUser
-from db_config.database import get_db
+from app.models.schemas import UserCreate, ResponseUser
+from app.db_config.database import get_db
 from sqlalchemy.orm import Session
-import models.db_models as db_models
+import app.models.db_models as db_models
 
 router = APIRouter(
     prefix="/users", tags=['users']

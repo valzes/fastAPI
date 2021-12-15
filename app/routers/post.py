@@ -1,11 +1,11 @@
 from typing import List, Optional
 from fastapi import status, HTTPException, Depends, APIRouter
 from starlette.status import HTTP_201_CREATED, HTTP_204_NO_CONTENT
-from models.schemas import CreatePost, ResponsePost, PostVote
-from db_config.database import get_db
+from app.models.schemas import CreatePost, ResponsePost, PostVote
+from app.db_config.database import get_db
 from sqlalchemy.orm import Session
-import models.db_models as db_models
-import oauth2
+import app.models.db_models as db_models
+import app.oauth2 as oauth2
 from sqlalchemy import func
 
 
