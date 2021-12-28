@@ -47,7 +47,8 @@ jobs:
   fastapi-job-deploy:
     needs: [fastapi-job-build]
     runs-on: ubuntu-latest
-
+    environment:
+      name: testing
     steps:
       - name: Pull git repo
         uses: actions/checkout@v2
