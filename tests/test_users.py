@@ -5,7 +5,7 @@ import pytest
 
 def test_root(client):
     res = client.get("/")
-    assert res.json().get("message") == "Welcome to Fast API!!"
+    assert res.json().get("message") == "Welcome to Fast API PROD!!"
     assert res.status_code == 200
 
 
