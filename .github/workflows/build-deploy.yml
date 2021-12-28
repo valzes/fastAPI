@@ -1,0 +1,10 @@
+name: Build and Deploy Code
+on: [push]
+jobs:
+  fastapi-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull git repo
+        uses: actions/checkout@v2
+      - name: say hi
+        run: echo "hello fastapi"
