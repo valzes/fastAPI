@@ -6,16 +6,16 @@ jobs:
     environment:
       name: testing
     env:
-      DATABASE_HOSTNAME: ${{secret.DATABASE_HOSTNAME}}
-      DATABASE_PORT: ${{secret.DATABASE_PORT}}
-      DATABASE_USERNAME: ${{secret.DATABASE_USERNAME}}
-      DATABASE_PASSWORD: ${{secret.DATABASE_PASSWORD}}
-      DATABASE_NAME: ${{secret.DATABASE_NAME}}
-      DATABASE_HOSTNAME_QA: ${{secret.DATABASE_HOSTNAME_QA}}
-      DATABASE_NAME_QA: ${{secret.DATABASE_NAME_QA}}
-      SECRET_KEY: ${{secret.SECRET_KEY}}
-      ALGORITHM: ${{secret.ALGORITHM}}
-      ACCESS_TOKEN_EXPIRATION: ${{secret.ACCESS_TOKEN_EXPIRATION}}
+      DATABASE_HOSTNAME: ${{secrets.DATABASE_HOSTNAME}}
+      DATABASE_PORT: ${{secrets.DATABASE_PORT}}
+      DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+      DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+      DATABASE_NAME: ${{secrets.DATABASE_NAME}}
+      DATABASE_HOSTNAME_QA: ${{secrets.DATABASE_HOSTNAME_QA}}
+      DATABASE_NAME_QA: ${{secrets.DATABASE_NAME_QA}}
+      SECRET_KEY: ${{secrets.SECRET_KEY}}
+      ALGORITHM: ${{secrets.ALGORITHM}}
+      ACCESS_TOKEN_EXPIRATION: ${{secrets.ACCESS_TOKEN_EXPIRATION}}
     steps:
       - name: Pull git repo
         uses: actions/checkout@v2
