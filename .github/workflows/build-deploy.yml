@@ -1,7 +1,7 @@
 name: Build and Deploy Code
 on: [push]
 jobs:
-  fastapi-job:
+  fastapi-job-build:
     runs-on: ubuntu-latest
     environment:
       name: testing
@@ -44,3 +44,10 @@ jobs:
         run: |
           pip install pytest
           pytest
+  fastapi-job-deploy:
+    needs: [fastapi-job-build]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: deploying to PROD
+        run: echo "Deploying to PROD"
