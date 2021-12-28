@@ -2,18 +2,18 @@ name: Build and Deploy Code
 on: [push]
 jobs:
   fastapi-job:
-    env: DATABASE_HOSTNAME=localhost
-      DATABASE_PORT=5432
-      DATABASE_USERNAME=postgres
-      DATABASE_PASSWORD=postgres
-      DATABASE_NAME=fastapi
-      DATABASE_HOSTNAME_QA=localhost
-      DATABASE_NAME_QA = fastapi_test
-      SECRET_KEY=wesjdhbfksjdfskfskdfhw32h5riu2ohr43quwj3efndazsdfaDadp[l[s;pzdlza
-      ALGORITHM=HS256
-      ACCESS_TOKEN_EXPIRATION=60
-
     runs-on: ubuntu-latest
+    env:
+      DATABASE_HOSTNAME: localhost
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_NAME: fastapi
+      DATABASE_HOSTNAME_QA: localhost
+      DATABASE_NAME_QA: fastapi_test
+      SECRET_KEY: wesjdhbfksjdfskfskdfhw32h5riu2ohr43quwj3efndazsdfaDadp[l[s;pzdlza
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRATION: 60
     steps:
       - name: Pull git repo
         uses: actions/checkout@v2
