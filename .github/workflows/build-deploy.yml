@@ -3,17 +3,19 @@ on: [push]
 jobs:
   fastapi-job:
     runs-on: ubuntu-latest
+    environment:
+      name: testing
     env:
-      DATABASE_HOSTNAME: localhost
-      DATABASE_PORT: 5432
-      DATABASE_USERNAME: postgres
-      DATABASE_PASSWORD: postgres
-      DATABASE_NAME: fastapi
-      DATABASE_HOSTNAME_QA: localhost
-      DATABASE_NAME_QA: fastapi_test
-      SECRET_KEY: wesjdhbfksjdfskfskdfhw32h5riu2ohr43quwj3efndazsdfaDadp[l[s;pzdlza
-      ALGORITHM: HS256
-      ACCESS_TOKEN_EXPIRATION: 60
+      DATABASE_HOSTNAME: ${{secret.DATABASE_HOSTNAME}}
+      DATABASE_PORT: ${{secret.DATABASE_PORT}}
+      DATABASE_USERNAME: ${{secret.DATABASE_USERNAME}}
+      DATABASE_PASSWORD: ${{secret.DATABASE_PASSWORD}}
+      DATABASE_NAME: ${{secret.DATABASE_NAME}}
+      DATABASE_HOSTNAME_QA: ${{secret.DATABASE_HOSTNAME_QA}}
+      DATABASE_NAME_QA: ${{secret.DATABASE_NAME_QA}}
+      SECRET_KEY: ${{secret.SECRET_KEY}}
+      ALGORITHM: ${{secret.ALGORITHM}}
+      ACCESS_TOKEN_EXPIRATION: ${{secret.ACCESS_TOKEN_EXPIRATION}}
     steps:
       - name: Pull git repo
         uses: actions/checkout@v2
